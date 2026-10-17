@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ResumeForge — Resume Maker</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto:wght@400;700&family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style id="pg"></style>
+</head>
+<body>
+<header class="topbar"><div class="brand">Resume<span>Forge</span></div><div class="actions"><select id="docSel" aria-label="Saved resumes"></select><button id="newDoc">New</button><button id="dupDoc">Duplicate</button><button id="renDoc">Rename</button><button id="delDoc">Delete</button><button id="undoBtn" title="Undo">↩ Undo</button><button id="redoBtn" title="Redo">Redo ↪</button></div><div class="actions"><button id="resetBtn">Reset sample</button><button id="clearBtn">Clear all</button><button onclick="$('imp').click()">Import data</button><input id="imp" type="file" accept=".json" hidden><button id="downloadBtn">Download data</button><button id="txtBtn">ATS text view</button><button class="primary" id="pdfBtn" title="Opens the print dialog: choose Save as PDF">Download PDF</button><span id="saved" class="muted"></span></div></header>
+<main class="workspace">
+<section class="panel editor-panel"><div class="panelhead"><h2>Edit your resume</h2><p>Autosaved in this browser. Changes appear instantly.</p></div><div id="editor"></div></section>
+<section class="panel"><div class="panelhead"><h2>Live preview </h2><p id="fitmsg">A4 · single column · ATS-friendly</p></div><div class="viewbar"><label>Zoom <input id="zoom" type="range" min="50" max="130" value="100"></label><label><input type="checkbox" id="guide"> Show A4 page-break guide</label></div><div class="preview-wrap" id="wrap"><article class="paper" id="resume"></article></div></section>
+</main>
+<dialog id="txtDlg"><h3 style="margin:0 0 8px">How an ATS reads your resume (plain text)</h3><pre id="txtOut"></pre><div class="actions"><button id="txtCopy">Copy</button><button id="txtDl">Download .txt</button><button id="txtClose">Close</button></div></dialog>
+<script src="app.js"></script>
+</body>
+</html>
